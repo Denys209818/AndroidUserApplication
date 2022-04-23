@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AndroidUserApplicationPhone</string>
+    <string name="to_main">На головну</string>
+    <string name="to_users">Користувачі</string>
+    <string name="to_login">Авторизація</string>
+    <string name="email">Електронна адреса</string>
+    <string name="password">Пароль</string>
+    <string name="to_logout">Вихід</string>
+    <string name="viewText">Початкове значення</string>
+    <string name="firstName">Ім\'я</string>
+    <string name="secondName">Прізвище</string>
+    <string name="phone">Телефон</string>
+</resources>
