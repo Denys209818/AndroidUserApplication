@@ -6,6 +6,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -95,11 +96,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI((SwaggerUIOptions opts) => {
         opts.SwaggerEndpoint("/swagger/v1/swagger.json", "My Web Api v1");
     });
-    app.SeedAll();
 }
+app.NEW_SeedAll();
 //Встановлення використвання авторизації
 app.UseAuthentication();
 app.UseAuthorization();
+
+ForwardedHeadersOptions options = new ForwardedHeadersOptions { 
+ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+};
+
+options.KnownNetworks.Clear();
+options.KnownProxies.Clear();
+
+app.UseForwardedHeaders(options);
 
 //Задання правил потілики для корсів
 app.UseCors((CorsPolicyBuilder builder) => {

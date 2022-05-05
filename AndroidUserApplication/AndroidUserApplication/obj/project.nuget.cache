@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "urzxhIY8oW4B3LLdCx5tMuEXQO6jzYextQ7z85ECVCKawN8PYiC5W/QNfzPpavwTwzgWEf3KI6dKAVT1WTsWxw==",
+  "dgSpecHash": "GRqtQJWFsC3JHPeN1oPKNPMPOMFESCAPpLKWDakzsZNzW8D+aEarA64A6Rr8txkdp8EuCdm4dMVfxVxBzHazVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Denis\\Desktop\\Android\\Lessons. ASP.NET Core Web API\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj",
+  "projectFilePath": "C:\\Users\\Denis\\Desktop\\HomeWork\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Denis\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Denis\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Denis\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\Denis\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
     "C:\\Users\\Denis\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.4.0\\fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",
     "C:\\Users\\Denis\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.4.0\\fluentvalidation.dependencyinjectionextensions.10.4.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Denis\\Desktop\\Android\\Lessons. ASP.NET Core Web API\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj": {}
+    "C:\\Users\\Denis\\Desktop\\HomeWork\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Denis\\Desktop\\Android\\Lessons. ASP.NET Core Web API\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj": {
+    "C:\\Users\\Denis\\Desktop\\HomeWork\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Denis\\Desktop\\Android\\Lessons. ASP.NET Core Web API\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj",
+        "projectUniqueName": "C:\\Users\\Denis\\Desktop\\HomeWork\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj",
         "projectName": "AndroidUserApplication",
-        "projectPath": "C:\\Users\\Denis\\Desktop\\Android\\Lessons. ASP.NET Core Web API\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj",
+        "projectPath": "C:\\Users\\Denis\\Desktop\\HomeWork\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication.csproj",
         "packagesPath": "C:\\Users\\Denis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Denis\\Desktop\\Android\\Lessons. ASP.NET Core Web API\\AndroidUserApplication\\AndroidUserApplication\\obj\\",
+        "outputPath": "C:\\Users\\Denis\\Desktop\\HomeWork\\AndroidUserApplication\\AndroidUserApplication\\AndroidUserApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -52,6 +52,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[11.0.0, )"
+            },
+            "Bogus": {
+              "target": "Package",
+              "version": "[34.0.2, )"
             },
             "FluentValidation.AspNetCore": {
               "target": "Package",
