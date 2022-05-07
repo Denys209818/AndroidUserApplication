@@ -3,6 +3,7 @@ using AndroidUserApplication.Data.Identity.Entities;
 using AndroidUserApplication.Models;
 using AndroidUserApplication.Services;
 using AutoMapper;
+using Bogus;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -21,14 +22,16 @@ namespace AndroidUserApplication.Controllers
         private IJwtBearerService _jwtService { get; set; }
         //Обєкт для маніпулювання з маппером
         private IMapper _mapper { get; set; }
+        private ILogger<AccountController> _logger { get; set; }
 
         public AccountController(UserManager<AppUser> userManager, IJwtBearerService jwtService,
-            IMapper mapper)
+            IMapper mapper, ILogger<AccountController> logger)
         {
             //Ініціалізація властивостей
             _userManager = userManager;
             _jwtService = jwtService;
             _mapper = mapper;
+            _logger = logger;
         }
 
         [HttpPost]
@@ -37,6 +40,9 @@ namespace AndroidUserApplication.Controllers
         public async Task<IActionResult> LoginUser([FromBody] LoginUserModel loginModel) 
         {
             return await Task.Run(async () => {
+
+                //_logger.LogError("Error in Account Controller");
+                //throw new Exception("Error in login controller");
                 //Пошук по електронній адресі користувача
                 AppUser user = await _userManager.FindByEmailAsync(loginModel.Email);
                 IActionResult res = Ok();
@@ -77,6 +83,7 @@ namespace AndroidUserApplication.Controllers
         {
             return await Task.Run(async () => 
             {
+                
                 IActionResult res = Ok();
                 //Пошук користувача по електронній адресі. Якщо знайдено то повертається помилка
                 //що дана пошта зареєстрована
@@ -195,6 +202,30 @@ namespace AndroidUserApplication.Controllers
                     return BadRequest(model);
                 }
 
+            });
+        }
+
+        [HttpGet]
+        [Route("randoms/{count}")]
+        public async Task<IActionResult> RandomUser([FromRoute]int count) 
+        {
+            return await Task.Run(() => {
+                Faker<UserRandomModel> faker = new Faker<UserRandomModel>("uk")
+                .RuleFor(x => x.Email, x => x.Internet.Email())
+                .RuleFor(x => x.Phone, x => x.Phone.PhoneNumber())
+                .RuleFor(x => x.FirstName, x => x.Name.FirstName())
+                .RuleFor(x => x.LastName, x => x.Name.LastName());
+
+                List<UserRandomModel> models = new List<UserRandomModel>();
+
+                for (int i = 0; i < count; i++) 
+                {
+                    UserRandomModel user = faker.Generate();
+                    user.Key = i.ToString();
+                    models.Add(user);
+                }
+
+                return Ok(models);
             });
         }
     }

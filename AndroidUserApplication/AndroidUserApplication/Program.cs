@@ -1,6 +1,7 @@
 using AndroidUserApplication.Data;
 using AndroidUserApplication.Data.Identity.Entities;
 using AndroidUserApplication.Mappers;
+using AndroidUserApplication.Middleware;
 using AndroidUserApplication.Services;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
@@ -110,7 +111,8 @@ options.KnownNetworks.Clear();
 options.KnownProxies.Clear();
 
 app.UseForwardedHeaders(options);
-
+app.UseGlobalExceptionHandler();
+app.UseLoggerWithFile();
 //Задання правил потілики для корсів
 app.UseCors((CorsPolicyBuilder builder) => {
     builder.AllowAnyHeader().AllowAnyHeader().AllowAnyOrigin();

@@ -27,6 +27,15 @@
         public string Email { get; set; }
     }
 
+    public class UserRandomModel
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Key { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+    }
+
     public class UserDeleteModel
     {
         public string Email { get; set; }

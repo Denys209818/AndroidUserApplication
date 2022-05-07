@@ -43,6 +43,8 @@ namespace AndroidUserApplication.Services
                 context.Database.Migrate();
                 GenerateUser(scope.ServiceProvider);
                 GenerateRole(scope.ServiceProvider);
+
+
             }
         }
 
